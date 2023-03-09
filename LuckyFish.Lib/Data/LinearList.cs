@@ -15,9 +15,9 @@ public class LinearList<T>
     public void Add(T data)
     {
         Length++;
-        if (Length > Data.Length)
+        if (Length >= Data.Length)
             AddSize();
-        Data[Length] = data;
+        Data[Length-1] = data;
     }
 
     private void AddSize()
@@ -75,7 +75,6 @@ public class LinearList<T>
 
         Data = a;
     }
-    public T Get(int index) => Data[index];
 
     public T[] ToArray()
     {
@@ -93,4 +92,8 @@ public class LinearList<T>
         Length = 0;
         Data = new T[InitSize];
     }
+
+    public List<T> GetList() => Data.TakeWhile(t => t != null).ToList();
+
+    public T this[int index] => Data[index];
 }

@@ -3,16 +3,11 @@
 public class CircularLinkedTable<T>
 {
     private T Data { get; set; }
-    private CircularLinkedTable<T> Next { get; set; } = new (){ Next = null }; 
-
-    public CircularLinkedTable(bool isNext = false)
-    {
-        Next.Next = this;
-    }
+    private CircularLinkedTable<T> Next { get; set; }
 
     public CircularLinkedTable(T data)
     {
-        Next.Next = this;
+        Next = this;
         Data = data;
     }
 
@@ -24,9 +19,7 @@ public class CircularLinkedTable<T>
         a.Next = next;
     }
 
-    public void RemoveNext()
-    {
-        if (Next.Next != null)
-            Next = Next.Next;
-    }
+    public void RemoveNext() => Next = Next.Next;
+    public CircularLinkedTable<T> GetNext() => Next;
+    public override string ToString() => Data.ToString();
 }

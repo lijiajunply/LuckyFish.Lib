@@ -27,25 +27,13 @@ public class DriveOperation : IFileSystem
         DriveType = info.DriveType.ToString();
         Extension = "";
     }
-    public void Rename(string newName)
-    {
-        throw new NotImplementedException();
-    }
+    public void Rename(string newName){}
 
-    public void Delete()
-    {
-        throw new NotImplementedException();
-    }
+    public void Delete(){}
 
-    public void Move(string newDirectoryPath)
-    {
-        throw new NotImplementedException();
-    }
+    public void Move(string newDirectoryPath) { }
 
-    public void Copy(string newDirectoryPath)
-    {
-        throw new NotImplementedException();
-    }
+    public void Copy(string newDirectoryPath) {}
 
     public bool Exist() => Directory.Exists(Path);
 }
