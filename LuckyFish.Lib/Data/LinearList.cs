@@ -17,7 +17,7 @@ public class LinearList<T>
         Length++;
         if (Length >= Data.Length)
             AddSize();
-        Data[Length-1] = data;
+        Data[Length - 1] = data;
     }
 
     private void AddSize()
@@ -28,32 +28,25 @@ public class LinearList<T>
             newData[i] = Data[i];
         Data = newData;
     }
-    
+
     public void Insert(int index, T item)
     {
         if (index >= Length)
-        {
             throw new Exception($"LinearList.Insert Error: the index {index} is more than length {Length}");
-        }
         if (index < 0)
-        {
             throw new Exception($"LinearList.Insert Error: the index {index} is less than 0");
-        }
         Length++;
-        var a = new T[InitSize >= Length?InitSize:Length];
+        var a = new T[InitSize >= Length ? InitSize : Length];
         for (int i = 0; i < a.Length; i++)
         {
             if (i < index)
-            {
                 a[i] = Data[i];
-            }else if (i == index)
-            {
+            else if (i == index)
                 a[index] = item;
-            }else if (i > index)
-            {
+            else if (i > index)
                 a[i] = Data[i - 1];
-            }
         }
+
         Data = a;
     }
 
@@ -64,13 +57,9 @@ public class LinearList<T>
         for (int i = 0; i < a.Length; i++)
         {
             if (i < index)
-            {
                 a[i] = Data[i];
-            }
             else if (i > index)
-            {
                 a[i - 1] = Data[i];
-            }
         }
 
         Data = a;
@@ -80,10 +69,7 @@ public class LinearList<T>
     {
         var a = new T[Length];
         for (int i = 0; i < Length; i++)
-        {
             a[i] = Data[i];
-        }
-
         return a;
     }
 
