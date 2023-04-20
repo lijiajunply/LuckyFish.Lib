@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-namespace LuckyFish.Lib.MoreMath.Operation;
+namespace LuckyFish.Lib.Operation;
 
 public class NumberOperation : NumberExpression
 {

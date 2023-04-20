@@ -1,6 +1,6 @@
-﻿using LuckyFish.Lib.MoreMath.Operation;
+﻿using LuckyFish.Lib.Operation;
 
-namespace LuckyFish.Lib.MoreMath;
+namespace LuckyFish.Lib;
 
 public class Calculator
 {

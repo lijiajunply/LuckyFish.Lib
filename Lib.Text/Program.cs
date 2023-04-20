@@ -1,8 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using System.Text.RegularExpressions;
-using LuckyFish.Lib.Data;
-using LuckyFish.Lib.MoreMath.Operation;
+﻿using LuckyFish.Lib.Data;
 using Math = LuckyFish.Lib.MoreMath.Math;
 
 //Console.WriteLine(Math.Round(20.12346,4));

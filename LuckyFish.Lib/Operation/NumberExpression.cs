@@ -1,7 +1,6 @@
-﻿namespace LuckyFish.Lib.MoreMath.Operation;
+﻿namespace LuckyFish.Lib.Operation;
 
 public interface NumberExpression
 {
-    public void Parser(string context);
     public decimal Run(Dictionary<string,decimal>? values = null);
 }

@@ -1,14 +1,9 @@
-﻿namespace LuckyFish.Lib.MoreMath.Operation;
+﻿namespace LuckyFish.Lib.Operation;
 
 public class Variable : NumberExpression
 {
     private string Name { get; set; }
     public Variable(string name) => Name = name;
-    public void Parser(string context)
-    {
-        Name = context;
-    }
-
     public decimal Run(Dictionary<string, decimal>? values = null)
     {
         try

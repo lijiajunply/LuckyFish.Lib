@@ -22,4 +22,12 @@ public static class Sorts
         QuickSort(ref data,left, i - 1);
         QuickSort(ref data, i + 1, right);
     }
+
+    public static void BubbleSort(ref int[] data)
+    {
+        for (int i = 0; i < data.Length; i++)
+        for (int j = 0; j < data.Length-i; j++)
+                if (data[j] < data[j+1])
+                    (data[j], data[j + 1]) = (data[j + 1],data[j]);
+    }
 }

@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuckyFish.Lib", "LuckyFish.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib.Text", "Lib.Text\Lib.Text.csproj", "{09B78081-03F5-4FEB-8096-ACD747E9B931}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuckyFish.Calculator.Ava", "LuckyFish.Calculator.Ava\LuckyFish.Calculator.Ava.csproj", "{2567A976-0CA9-475A-8877-DC9DEFB52EE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuckyFish.Ranger", "LuckyFish.Ranger\LuckyFish.Ranger.csproj", "{4AAA4FE6-C264-4C8F-A85F-61FF9C2495F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{09B78081-03F5-4FEB-8096-ACD747E9B931}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09B78081-03F5-4FEB-8096-ACD747E9B931}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09B78081-03F5-4FEB-8096-ACD747E9B931}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2567A976-0CA9-475A-8877-DC9DEFB52EE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2567A976-0CA9-475A-8877-DC9DEFB52EE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2567A976-0CA9-475A-8877-DC9DEFB52EE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2567A976-0CA9-475A-8877-DC9DEFB52EE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AAA4FE6-C264-4C8F-A85F-61FF9C2495F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AAA4FE6-C264-4C8F-A85F-61FF9C2495F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AAA4FE6-C264-4C8F-A85F-61FF9C2495F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AAA4FE6-C264-4C8F-A85F-61FF9C2495F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

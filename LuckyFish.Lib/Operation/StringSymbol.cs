@@ -1,4 +1,4 @@
-﻿namespace LuckyFish.Lib.MoreMath.Operation;
+﻿namespace LuckyFish.Lib.Operation;
 
 public class StringSymbol
 {
