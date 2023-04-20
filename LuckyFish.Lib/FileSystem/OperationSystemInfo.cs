@@ -1,6 +1,6 @@
 ﻿namespace LuckyFish.Lib.FileSystem;
 
-public class OperationSystemInfo
+public static class OperationSystemInfo
 {
     public static string OperationSystemName
     {
