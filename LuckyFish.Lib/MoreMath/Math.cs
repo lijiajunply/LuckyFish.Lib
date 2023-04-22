@@ -85,7 +85,7 @@ public static class Math
     {
         Stack<string> stack = new Stack<string>();
         StringBuilder postfix = new StringBuilder();
-        string pattern = @"([1-9]\d*\.?\d*)|(0\.\d*[1-9])|[+]|[-]|[*]|[/]|[(]|[)]";
+        string pattern = @"([0-9]+)|([0-9]+\\.[0-9]+)|[+]|[-]|[*]|[/]|[^]|[%]|[(]|[)]";
         List<string> text = new List<string>();
         foreach (Match match in Regex.Matches(expression, pattern))
             text.Add(match.Value);
@@ -135,7 +135,7 @@ public static class Math
         foreach (var s in expr)
         {
             if (s == "") break;
-            if (decimal.TryParse(s, out decimal value))
+            if (decimal.TryParse(s, out var value))
                 stack.Push(value);
             else
             {
@@ -154,6 +154,9 @@ public static class Math
                         break;
                     case "/":
                         stack.Push(left / right);
+                        break;
+                    case "^":
+                        stack.Push(Convert.ToDecimal(System.Math.Pow(Convert.ToDouble(left),Convert.ToDouble(right))));
                         break;
                 }
             }

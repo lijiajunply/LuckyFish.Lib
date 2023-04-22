@@ -9,11 +9,57 @@
         Title="LuckyFish.Calculator.Ava">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto" ></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0"></WrapPanel>
+        <TextBlock Tapped="HistoryTapped" Text="{Binding History}" Grid.Row="1"></TextBlock>
+        <TextBlock Text="{Binding MathExpression}" Grid.Row="2"></TextBlock>
+        <Grid Name="ButtonGrid" Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Click="MathClick" Grid.Row="0" Grid.Column="0">%</Button>
+            <Button Click="MathClick" Grid.Row="1" Grid.Column="0">^-1</Button>
+            <Button Click="MathClick" Grid.Row="2" Grid.Column="0">7</Button>
+            <Button Click="MathClick" Grid.Row="3" Grid.Column="0">4</Button>
+            <Button Click="MathClick" Grid.Row="4" Grid.Column="0">1</Button>
+            <Button Click="MathClick" Grid.Row="5" Grid.Column="0"> +/- </Button>
+            <Button Click="MathClick" Grid.Row="0" Grid.Column="1">CE</Button>
+            <Button Click="MathClick" Grid.Row="1" Grid.Column="1">^2</Button>
+            <Button Click="MathClick" Grid.Row="2" Grid.Column="1">8</Button>
+            <Button Click="MathClick" Grid.Row="3" Grid.Column="1">5</Button>
+            <Button Click="MathClick" Grid.Row="4" Grid.Column="1">2</Button>
+            <Button Click="MathClick" Grid.Row="5" Grid.Column="1">0</Button>
+            <Button Click="MathClick" Grid.Row="0" Grid.Column="2">C</Button>
+            <Button Click="MathClick" Grid.Row="1" Grid.Column="2">^2</Button>
+            <Button Click="MathClick" Grid.Row="2" Grid.Column="2">9</Button>
+            <Button Click="MathClick" Grid.Row="3" Grid.Column="2">6</Button>
+            <Button Click="MathClick" Grid.Row="4" Grid.Column="2">3</Button>
+            <Button Click="MathClick" Grid.Row="5" Grid.Column="2">.</Button>
+            <Button Click="MathClick" Grid.Row="0" Grid.Column="3">Delete</Button>
+            <Button Click="MathClick" Grid.Row="1" Grid.Column="3">/</Button>
+            <Button Click="MathClick" Grid.Row="2" Grid.Column="3">*</Button>
+            <Button Click="MathClick" Grid.Row="3" Grid.Column="3">-</Button>
+            <Button Click="MathClick" Grid.Row="4" Grid.Column="3">+</Button>
+            <Button Click="MathClick" Grid.Row="5" Grid.Column="3">=</Button>
+        </Grid>
+    </Grid>
 </Window>

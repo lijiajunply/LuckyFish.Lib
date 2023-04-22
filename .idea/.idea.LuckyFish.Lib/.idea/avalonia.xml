@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="LuckyFish.Calculator.Ava/Views/MainWindow.axaml" value="LuckyFish.Calculator.Ava/LuckyFish.Calculator.Ava.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

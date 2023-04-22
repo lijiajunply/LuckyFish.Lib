@@ -1,6 +1,6 @@
 ﻿namespace LuckyFish.Lib.Operation;
 
-public class StringSymbol
+public class StringSymbol : NumberExpression
 {
     public StringSymbol(string symbol,int precedence,Func<NumberExpression, NumberExpression, 
         Dictionary<string,decimal>? ,decimal>? operation = null)
@@ -13,6 +13,10 @@ public class StringSymbol
         Dictionary<string,decimal>? ,decimal>? Operation { get; set; }
     public string? Symbol { get; set; }
     public int Precedence { get; set; }
+    public decimal Run(Dictionary<string, decimal>? values = null)
+    {
+        
+    }
 }
 
 public static class BasicOperation
