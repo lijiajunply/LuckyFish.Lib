@@ -1,7 +1,7 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using LuckyFish.Calculator.Ava.Models;
 using LuckyFish.Calculator.Ava.ViewModels;
+using LuckyFish.Lib.MoreMath;
 
 namespace LuckyFish.Calculator.Ava.Views;
 
@@ -31,14 +31,14 @@ public partial class MainWindow : Window
         {
             case "=":
                 data.History = data.MathExpression;
-                data.MathExpression = MathPostfix.Postfix(data.MathExpression).ToString();
+                data.MathExpression = Math.Postfix(data.MathExpression).ToString();
                 return;
             case "C":
                 data.MathExpression = "0";
                 return;
             case "+/-":
                 data.History = $"-({data.MathExpression})";
-                data.MathExpression = MathPostfix.Postfix($"0-({data.MathExpression})").ToString();
+                data.MathExpression = Math.Postfix($"0-({data.MathExpression})").ToString();
                 return;
             case "CE":
                 return;

@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -7,14 +6,27 @@ namespace LuckyFish.Lib.MoreMath;
 
 public static class Math
 {
+    #region Porp
+
     public static double E => System.Math.E;
     public static double Pi => System.Math.PI;
     public static double Tau => System.Math.Tau;
+
+    #endregion
+
+    #region Basic
+
+    #region Pow
 
     public static double Pow(double x, int n)
     {
         long l = n;
         return l >= 0 ? QuickMul(x, l) : 1.0 / QuickMul(x, -l);
+    }
+
+    public static double Pow(double x, double n)
+    {
+        return 0;
     }
 
     private static double QuickMul(double x, long N)
@@ -24,7 +36,18 @@ public static class Math
         return N % 2 == 0 ? y * y : y * y * x;
     }
 
+    #endregion
+
+    #region Abs
+
     public static int Abs(int x) => x >= 0 ? x : -x;
+    public static double Abs(double x) => x >= 0 ? x : -x;
+    public static decimal Abs(decimal x) => x >= 0 ? x : -x;
+    public static float Abs(float x) => x >= 0 ? x : -x;
+
+    #endregion
+
+    #region Compare
 
     public static int Max(int[] x)
     {
@@ -43,6 +66,10 @@ public static class Math
                 min = i;
         return min;
     }
+
+    #endregion
+
+    #region Angle
 
     public static double ToRad(double x) => x / 180 * Pi;
 
@@ -64,12 +91,7 @@ public static class Math
 
     public static double Tan(double x) => Sin(x) / Cos(x);
 
-    public static int Multiply(int n)
-    {
-        if (n > 1)
-            return n * Multiply(n - 1);
-        return 1;
-    }
+    #endregion
 
     public static double Round(double x, int y)
     {
@@ -80,6 +102,16 @@ public static class Math
             w += (int.Parse(z[y - 1].ToString()) + 1).ToString()[0];
         return double.Parse(a + "." + w);
     }
+
+    public static int Multiply(int n)
+        => n > 1 ? n * Multiply(n - 1) : 1;
+
+    #endregion
+
+    #region Postfix
+
+    public static decimal Postfix(string expression) =>
+        EvaluatePostfix(InfixToPostfix(expression));
 
     public static string InfixToPostfix(string expression)
     {
@@ -110,11 +142,12 @@ public static class Math
                 stack.Push(s);
             }
         }
+
         while (stack.Count > 0)
             postfix.Append(stack.Pop());
         return postfix.ToString();
     }
-    
+
     private static int Precedence(string s)
     {
         return s switch
@@ -156,7 +189,7 @@ public static class Math
                         stack.Push(left / right);
                         break;
                     case "^":
-                        stack.Push(Convert.ToDecimal(System.Math.Pow(Convert.ToDouble(left),Convert.ToDouble(right))));
+                        stack.Push(Convert.ToDecimal(System.Math.Pow(Convert.ToDouble(left), Convert.ToDouble(right))));
                         break;
                 }
             }
@@ -164,7 +197,11 @@ public static class Math
 
         return stack.Pop();
     }
-    
+
+    #endregion
+
+    #region Log
+
     public static double Ln(double x, int accuracy = 100)
     {
         double a = x;
@@ -172,6 +209,9 @@ public static class Math
             a = a - 1.0 + a / Exp(a);
         return a;
     }
+
     public static double Log(double a, double x) => Ln(x) / Ln(a);
     public static double Exp(double x) => System.Math.Exp(x);
+
+    #endregion
 }
