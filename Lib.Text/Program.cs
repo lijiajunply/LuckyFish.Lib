@@ -1,8 +1,13 @@
 ﻿using LuckyFish.Lib;
-using LuckyFish.Lib.Data;
 using Math = LuckyFish.Lib.MoreMath.Math;
 
-//Console.WriteLine(Math.Round(20.12346,4));
-Console.WriteLine(Math.InfixToPostfix("((10+1)*2)*8"));
-var a = new Calculator("((10+1)*2)*8");
-//Console.WriteLine(new NumberOperation(new Number(1),new Number(2),OperationSymbol.Plus).Run());
+/*int left = 3;
+int top = 2;
+Console.SetCursorPosition(left,top);
+Console.ReadKey();*/
+while (true)
+{
+    var key = Console.ReadKey().Key;
+    if (key == ConsoleKey.Escape) return;
+    Console.WriteLine(key);
+}
